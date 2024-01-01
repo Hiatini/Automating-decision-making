@@ -1,0 +1,20 @@
+from random import choice
+import pandas as pd
+
+# create of list of thing you love to eat
+
+foods = [['korean','bibimbap','difficult','new'],
+    ['french','bourbignon','difficult','new'],
+    ['italian','pizza','difficiult','old'],
+    ['polynesian','sardine','easy','new']]
+
+foods_df = pd.DataFrame(foods, columns=['Type of food','Idea of recipe','difficulty','Is it new for you or not?'])
+foods_df
+#Input mood
+print("What mood are you in?")
+mood=input()
+
+#loop through and find a match
+for item in foods : 
+    if item[1] == mood:
+        print(mood + 'foods:' + item[0])
