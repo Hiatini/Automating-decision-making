@@ -1,0 +1,28 @@
+# Collecting user information
+mood = input("What's your mood today? ")
+ingredients_available = input("What ingredients do you have in your fridge?")
+meal_type = input("What type of meal would you like to eat? ")
+time_available = input("How much time do you have for preparation? ")
+
+# Recipe database (simple example)
+recipes = [
+    {"name": "Pasta carbonara", "ingredients": ["pasta", "bacon", "eggs", "parmesan"], "type": "pasta", "time": 20},
+    { "name": "Caesar salad", "ingredients": ["lettuce", "chicken", "parmesan", "Caesar sauce"], "type": "salad", "time": 15},
+    # ... Add more recipes
+]
+
+# Filter recipes according to user criteria
+recettes_filtrees = []
+for recette in recettes:
+    if all(ingredient in ingredients_disponibles for ingredient in recette["ingredients"]) \
+            and recette["type"] == type_repas \
+            and recette["temps"] <= int(temps_disponible):
+        recettes_filtrees.append(recette)
+
+# Display results
+if recettes_filtrees:
+    print("Here are some recipes that match your criteria:")
+    for recette in recettes_filtrees:
+        print(f"- {recipe['name']}")
+else:
+    print("No recipes match your criteria.")
